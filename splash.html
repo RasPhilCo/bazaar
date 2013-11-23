@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+		<script type="text/javascript">
+			Parse.initialize("cmXcRxgoNTg4q1cbNm8R7yCIqBjlCaeBw7UZdIr9", "mcSEzmjS4TPSmqklyq3DGymqWciRfo5HxkhXYSYA");
+
+		</script>
+
+		<style>
+			// red-color: rgba(190, 81, 76, 0.5)
+			// tan-color: rgba(255, 242, 208, 1.0000)
+			* {
+				-webkit-transition:all 250ms ease-in-out;
+				transition:all 250ms ease-in-out;
+			}
+
+			body {
+				font-size: 16px;
+				font-family: Helvetica;
+				background-color: #fff2d0;
+				font-weight: lighter;
+				background: -webkit-linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Istanbul_grand_bazar_1.jpg/1024px-Istanbul_grand_bazar_1.jpg');
+				background-size: cover;
+			}
+
+			.arch {
+				width: 400px;
+				//border-top-left-radius: 200px;
+				//border-top-right-radius: 200px;
+				//background-image: -webkit-linear-gradient(top, #be514c, #be514c 60%, rgba(0,0,0,0));
+				//background-color: rgba(255,255,255,0.2);
+				margin:auto;
+				margin-top: 20px;
+				padding-top: 80px;
+				padding-bottom: 200px;
+				text-align: center;
+				color: white;
+			}
+
+			input {
+				font-size: 1em;
+			}
+
+			p.text {
+				width:80%;
+				margin: auto;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				text-align: left;
+				color:white;
+				font-size: 0.8em;
+				line-height: 1.4em;
+			}
+
+			input {
+				display: block;
+				width:80%;
+				margin:auto;
+			}
+
+			input[type="submit"] {
+				padding: 0.8em 0.8em;
+				background: #be514c;
+				border:1px solid #be514c;
+				color: white;
+				border-radius: 2px;
+				margin-top:0.6em;
+			}
+
+			input[type="submit"]:hover {
+				background: #ce615c;
+			}
+
+			input[type="email"] {
+				box-shadow:none;
+				border-radius: 2px;
+				border:none;
+				padding: 0.8em;
+				font-size: 0.8em;
+				color: #655;
+				margin-top:0.6em;
+			}
+
+			input:focus {
+				outline: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="arch">
+			<h1>Bazaar</h1> <!-- Put branding image here -->
+			<p class="text">Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. </p>
+			<input type="email" placeholder="Email address"/>
+			<input type="submit" value="Let Me Know" />
+		</div>
+	</body>
+</html>
