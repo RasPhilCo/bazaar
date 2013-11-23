@@ -42,6 +42,7 @@
 								// The object was not retrieved successfully.
 								// error is a Parse.Error with an error code and description.
 								console.log('These aren\'t the droids you\'re looking for');
+								localStorage.removeItem('bazaar_id');
 								user = new BazaarUser();
 								arch.style.opacity = 1.0;
 							}
@@ -86,6 +87,7 @@
 			* {
 				-webkit-transition:all 250ms ease-in-out;
 				transition:all 250ms ease-in-out;
+				box-sizing:border-box;
 			}
 
 			body {
@@ -127,7 +129,7 @@
 
 			input, div.button {
 				display: block;
-				width:80%;
+				width:350px;
 				margin:auto;
 			}
 
@@ -175,9 +177,22 @@
 	<body>
 		<div class="arch">
 			<h1>Bazaar</h1> <!-- Put branding image here -->
-			<p class="text">Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. </p>
+			<p>Purchase with purpose.</p>
+			<p>Bazaar is an online fashion marketplace where your money does more.</p>
+			<p>Empower social entrepreneurs. Give voice to the unheard. Connect cultures.</p>
+			<p>Get notified when the Bazaar opens</p>
 			<input id="email" type="email" placeholder="Email address"/>
-			<div id="submit" class="button">Let Me Know</div>
+			<div id="submit" class="button">Notify Me</div>
 		</div>
 	</body>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-45947868-1', 'explorebazaar.co');
+		ga('send', 'pageview');
+
+	</script>
 </html>
