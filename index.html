@@ -120,6 +120,8 @@
 				bottom:0;
 				z-index: -10;
 				background: -webkit-linear-gradient(top, rgba(143, 29, 1, 0.7), rgba(188, 91, 38, 0.7));
+				background: -moz-linear-gradient(top, rgba(143, 29, 1, 0.7), rgba(188, 91, 38, 0.7));
+				background: linear-gradient(top, rgba(143, 29, 1, 0.7), rgba(188, 91, 38, 0.7));
 
 			}
 
@@ -198,6 +200,10 @@
 					font-size: 20px;
 				}
 
+				#video_background {
+					display: none;
+				}
+
 				.arch {
 					width: 90%;
 					margin-left: auto;
@@ -212,6 +218,7 @@
 				right: 0;
 				z-index: -1000;
 				-webkit-filter: blur(6px);
+				filter:blur(6px);
 			}
 
 
