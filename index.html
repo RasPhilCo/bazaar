@@ -33,7 +33,9 @@
 							success: function(obj) {
 								// The object was retrieved successfully.
 								user = obj;
-								showSuccess('You\'ve already signed up! We can\'t wait to share our story with you.');
+								if (user.email) {
+									showSuccess('You\'ve already signed up! We can\'t wait to share our story with you.');
+								}
 								arch.style.opacity = 1.0;
 							},
 							error: function(object, error) {
