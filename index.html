@@ -29,43 +29,16 @@
 					arch.appendChild(successDiv);
 				}
 
-				if (localStorage) {
-					var id = localStorage.getItem('bazaar_id');
 
-					if (id) {
-						
-						var query = new Parse.Query(BazaarUser);
-						query.get(id, {
-							success: function(obj) {
-								// The object was retrieved successfully.
-								user = obj;
-								if (user.get('email')) {
-									showSuccess('You\'ve already signed up! We can\'t wait to share our story with you.');
-								}
-								arch.style.opacity = 1.0;
-							},
-							error: function(object, error) {
-								// The object was not retrieved successfully.
-								// error is a Parse.Error with an error code and description.
-								console.log('These aren\'t the droids you\'re looking for');
-								localStorage.removeItem('bazaar_id');
-								user = new BazaarUser();
-								arch.style.opacity = 1.0;
-							}
-						});
-					} else {
-						user = new BazaarUser();
-						user.save(null, {
-							success: function(obj) {
-								localStorage.setItem('bazaar_id', user.id);
-								arch.style.opacity = 1.0;
-							},
-							error: function(er) {
-								arch.style.opacity = 1.0;
-							}
-						});
+				user = new BazaarUser();
+				user.save(null, {
+					success: function(obj) {
+						arch.style.opacity = 1.0;
+					},
+					error: function(er) {
+						arch.style.opacity = 1.0;
 					}
-				}
+				});
 
 				submitButton.addEventListener('click', function(e) {					
 					var email = document.getElementById('email').value;
@@ -106,10 +79,10 @@
 				font-family: Pigeon, serif;
 				background-color: black;
 				font-weight: lighter;
-				/*background: -webkit-linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://www.cruisingexcursions.com/imgCrop/Excursions/2/Grand-Bazaar.jpg');
-				background: -moz-linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://www.cruisingexcursions.com/imgCrop/Excursions/2/Grand-Bazaar.jpg');
-				background: linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://www.cruisingexcursions.com/imgCrop/Excursions/2/Grand-Bazaar.jpg');
-				background-size: cover;*/
+				background: -webkit-linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://barbaraschwarz.files.wordpress.com/2013/05/mlt.jpg');
+				background: -moz-linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://barbaraschwarz.files.wordpress.com/2013/05/mlt.jpg');
+				background: linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://barbaraschwarz.files.wordpress.com/2013/05/mlt.jpg');
+				background-size: cover;
 			}
 
 			.background {
@@ -127,6 +100,7 @@
 
 			h1 {
 				font-size: 8em;
+				margin-bottom: 0.4em;
 			}
 
 			.arch {
@@ -148,10 +122,11 @@
 
 			p.slogan {
 				font-size: 1.25em;
+				margin-bottom: 3em;
 			}
 
 			p.sub {
-				font-size: 0.75em;
+				font-size: 1em;
 			}
 
 			input, div.button {
@@ -225,10 +200,10 @@
 		</style>
 	</head>
 	<body>
-		<video id="video_background" autoplay loop>
+		<!--<video id="video_background" autoplay loop>
 			<source src="https://dl.dropboxusercontent.com/s/mos1sda9jawb2tp/Grand%20Bazaar%2C%20Istanbul%20%28Turkey%29%20copy.mp4?dl=1&token_hash=AAGPfX8ZvdCiF5UEOfQzVzoZfgQhzVCzVG7lyVdDtv64rw" type="video/mp4"/>
 		</video>
-		<div class="background"></div>
+		<div class="background"></div>-->
 		<div class="arch">
 			<h1>bazaar</h1> <!-- Put branding image here -->
 			<p class="slogan">A marketplace for products with stories.</p>
