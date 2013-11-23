@@ -1,0 +1,39 @@
+.imageinstance {
+	padding-top:17px;
+	padding-bottom:07px;
+}
+
+.imageinstance li {
+	list-style-type: none;
+}
+
+#maincolumn ul {
+	margin: 0px 10px 10px 10px;
+}
+
+.imageinstance h1 {
+	line-height:10px;
+	font-size: 17px;
+}
+.imageinstance p {
+	line-height:10px;
+	padding-bottom: 17px;
+}
+
+.imageinstance img {
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 2px 2px #000;
+	-moz-box-shadow: 2px 2px #000;
+	box-shadow: 2px 2px 5px #9999ff;
+}
+
+.blackback {
+	background-color:#000;
+}
+
+#maincolumn {
+	background-color:#ccccff;
+	text-align: center;
+}
