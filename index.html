@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<link rel="icon" type="image/png" href="bazaar icon.png">
 		<script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
 		<script type="text/javascript">
 			Parse.initialize("cmXcRxgoNTg4q1cbNm8R7yCIqBjlCaeBw7UZdIr9", "mcSEzmjS4TPSmqklyq3DGymqWciRfo5HxkhXYSYA");
@@ -15,10 +16,15 @@
 
 
 				function showSuccess(message) {
+					var sub = document.getElementsByClassName('sub');
+					if (sub && sub.length) {
+						sub[0].remove();
+					}
 					emailField.remove();
 					submitButton.remove();
 					
 					var successDiv = document.createElement('div');
+					successDiv.className = 'successMessage';
 					successDiv.innerHTML = message;
 					arch.appendChild(successDiv);
 				}
@@ -82,6 +88,10 @@
 		</script>
 
 		<style>
+			@font-face {
+				font-family:Pigeon;
+				src:url('Pigeon.otf');
+			}
 			/* red-color: rgba(190, 81, 76, 0.5) */
 			/* tan-color: rgba(255, 242, 208, 1.0000) */
 			* {
@@ -92,11 +102,24 @@
 
 			body {
 				font-size: 16px;
-				font-family: Helvetica;
+				font-family: Pigeon, serif;
 				background-color: #fff2d0;
 				font-weight: lighter;
-				background: -webkit-linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://barbaraschwarz.files.wordpress.com/2013/05/mlt.jpg');
-				background-size: cover;
+				/*background: -webkit-linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://www.cruisingexcursions.com/imgCrop/Excursions/2/Grand-Bazaar.jpg');
+				background: -moz-linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://www.cruisingexcursions.com/imgCrop/Excursions/2/Grand-Bazaar.jpg');
+				background: linear-gradient(top, rgba(190, 81, 76, 0.5), rgba(255, 242, 208, 0.5)), url('http://www.cruisingexcursions.com/imgCrop/Excursions/2/Grand-Bazaar.jpg');
+				background-size: cover;*/
+			}
+
+			.background {
+				position: fixed;
+				top:0;
+				left:0;
+				right:0;
+				bottom:0;
+				z-index: -10;
+				background: -webkit-linear-gradient(top, rgba(143, 29, 1, 0.7), rgba(188, 91, 38, 0.7));
+
 			}
 
 			.arch {
@@ -116,15 +139,12 @@
 				font-size: 1em;
 			}
 
-			p.text {
-				width:80%;
-				margin: auto;
-				margin-top: 20px;
-				margin-bottom: 20px;
-				text-align: left;
-				color:white;
-				font-size: 0.8em;
-				line-height: 1.4em;
+			p.slogan {
+				font-size: 1.25em;
+			}
+
+			p.sub {
+				font-size: 0.75em;
 			}
 
 			input, div.button {
@@ -135,15 +155,16 @@
 
 			div.button {
 				padding: 0.8em 0.8em;
-				background: #be514c;
-				border:1px solid #be514c;
+				background: rgb(160, 217, 174);
+				border:1px solid rgb(160, 217, 174);
 				color: white;
 				border-radius: 2px;
 				margin-top:0.6em;
+				text-shadow: 0 1px rgba(0,0,0,0.3);
 			}
 
 			div.button:hover {
-				background: #ce615c;
+				background: rgb(150, 207, 164);
 			}
 
 			input[type="email"] {
@@ -160,6 +181,12 @@
 				outline: 0;
 			}
 
+			.successMessage {
+				font-size: 1.5em;
+				margin-top: 3em;
+				color:rgb(160, 217, 174)
+			}
+
 			/* Mobile Styles */
 			@media (max-width: 600) {
 				body {
@@ -168,19 +195,32 @@
 
 				.arch {
 					width: 90%;
+					margin-left: auto;
 				}
+			}
+
+			#video_background {
+				position: fixed;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				z-index: -1000;
+				-webkit-filter: blur(6px);
 			}
 
 
 		</style>
 	</head>
 	<body>
+		<video id="video_background" autoplay>
+			<source src="https://dl.dropboxusercontent.com/s/mos1sda9jawb2tp/Grand%20Bazaar%2C%20Istanbul%20%28Turkey%29%20copy.mp4?dl=1&token_hash=AAGPfX8ZvdCiF5UEOfQzVzoZfgQhzVCzVG7lyVdDtv64rw" type="video/mp4"/>
+		</video>
+		<div class="background"></div>
 		<div class="arch">
 			<h1>Bazaar</h1> <!-- Put branding image here -->
-			<p>Purchase with purpose.</p>
-			<p>Bazaar is an online fashion marketplace where your money does more.</p>
-			<p>Empower social entrepreneurs. Give voice to the unheard. Connect cultures.</p>
-			<p>Get notified when the Bazaar opens</p>
+			<p class="slogan">A marketplace for products with stories.</p>
+			<p class="sub">Sign up to shop in our private release, coming soon.</p>
 			<input id="email" type="email" placeholder="Email address"/>
 			<div id="submit" class="button">Notify Me</div>
 		</div>
