@@ -1,7 +1,22 @@
 Products = new Meteor.Collection('products');
 
-
 if (Meteor.isClient) {
+
+
+  Template.container.helpers({
+    pageIs: function(arg) {
+      return Session.equals('view', arg);
+    },
+    current_product: function() {
+      var id = Session.get('product_id');
+      if (id) {
+        return Products.find(id);
+      } else {
+        return null;
+      }
+      
+    }
+  })
 
   var counter = 0;
   Template.stream.helpers({
