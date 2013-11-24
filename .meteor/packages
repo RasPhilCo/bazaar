@@ -10,3 +10,5 @@ preserve-inputs
 bootstrap
 backbone
 less
+jquery
+underscore
