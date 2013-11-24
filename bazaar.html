@@ -1,41 +1,10 @@
-
-<!DOCTYPE html>
-<html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>BAZAAR</title>
-  <!-- Le styles -->
-  <link href="../css/bootstrap.css" rel="stylesheet">
-  <link href="../css/custom.css" rel="stylesheet">  
-  <style>
-    body {
-      padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-    }
-  </style>
-
-  <script type='text/javascript' src='/js/lib/dummy.js'></script>
-  
-    
-      <script type='text/javascript' src="http://code.angularjs.org/1.0.0rc9/angular-1.0.0rc9.js"></script>
-    
-  
-  <style type='text/css'>
-    li {
-
-}
-
-#fixed {
-    height: 800px;
-    overflow: auto;
-}
-
-  </style>
-  <link href="../css/bootstrap-responsive.css" rel="stylesheet">
-
-  
+  <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
-<body ng-app="scroll" ng-controller="Main">
-	
+
+<body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -55,43 +24,67 @@
 
  <div class="container" id="fixed" when-scrolled="loadMore()">
 		<div class="row" id="row1">
-			<div class="span2 " >
+			<div class="span3 " >
 				<p></p>
 			</div>
-		  <div class="span8" >
+		  <div class="span5" >
 		      <h1>Welcome to Bazaar!</h1>
-		      <p class="lead">The world's first...</p>			
-		
+		      <p class="lead">Products that empower </p>			
 		  </div>		
-			<div class="span2" >
+			<div class="span3" >
 				<p></p>
 			</div>	
 		</div>
-	<div class="row" id="row2">
-		<div class="span2" >
-			<p></p>
-		</div>
-	  <div class="span8" id="maincolumn" >
-		  <div >
-		  <ul class="photos imageinstance">
-		    <li ng-repeat="i in items">
-				<a href="#/photos/{{i.id}}" class=""><img src="../img/{{i.id}}.jpg"></a>
-				<h1><a href="#/photos/{{photo.id}}">{{i.id}}</a></h1>
-				<p>{{photo.snippet}}</p>
-				</li>
-				
-		  </ul>  
-			</div>
-
-	  </div>		
-		<div class="span2 " >
-			<p></p>
-		</div>	
-	</div>
+		{{>stream}}
  </div>  <!--Le Container-->
 
+</body>
 
-<script type='text/javascript'>//<![CDATA[ 
+
+
+<template name="stream">
+{{#each product}}
+	{{>product}}
+{{/each}}
+</template>
+
+<template name="product">
+	<div class="row product" id="row">
+		<div class="span3" >
+			{{#if leftStory}}
+	    		<div class="left-story story">
+	        		{{>story}}
+	      		</div>
+      		{{/if}}
+		</div>
+		<div class="span5">
+			<div class="product_info">
+				<a href="#" class="photo_link"><img src="{{this.imageUrl}}"></a>
+				<div class="details">
+					<h1><a href="#">{{this.name}}</a></h1>
+					<p>{{this.snippet}}</p>
+					<span class="price">${{this.price}}</price>
+				</div>		
+			</div>
+		</div>		
+		<div class="span3">
+			{{#if rightStory}}
+				<div class="right-story story">
+		        	{{>story}}
+		    	</div>
+	    	{{/if}}
+		</div>	
+	</div>
+</template>
+
+<template name="story">
+	<div class="avatar">
+	</div>
+	<a class="name">{{this.creator.name}}</a>
+	<p>{{this.creator.short_story}}</p>
+</template>
+
+<!--<script type='text/javascript'>//<![CDATA[ 
 
 function Main($scope) {
     $scope.items = [];
@@ -121,11 +114,4 @@ angular.module('scroll', []).directive('whenScrolled', function() {
 
 //]]>  
 
-</script>
-
-
-</body>
-
-
-</html>
-
+</script>-->

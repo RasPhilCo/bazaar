@@ -1,0 +1,72 @@
+/* Original CSS */
+@font-face {
+	font-family: Pigeon;
+	src:url('font/Pigeon.otf');
+}	
+* {
+	box-sizing:border-box;
+}
+
+body {
+	font-family: Pigeon, serif;
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+a {
+	color:rgb(160, 217, 174);
+}
+
+.navbar-inner {
+	background-color: rgb(143, 29, 1)!important;
+	background-image: none!important;
+}
+
+.product_info {
+	border:1px solid #CCC;
+	border-radius: 2px;
+}
+
+.photo_link {
+	width:100%;
+	height: 360px;
+	background-color: #CCC;
+	display: inline-block;
+}
+
+.product_info h1 {
+	line-height:10px;
+	font-size: 17px;
+}
+.product_info p {
+	line-height:10px;
+}
+
+.blackback {
+	background-color:#000;
+}
+
+/* Product Styles */
+.product {
+	margin: 2em 0;
+}
+
+.product .details {
+	padding: 8px 8px 16px 8px;
+}
+
+/* Story Styles */
+.story {
+	margin-top: 2em;
+	padding:10px;
+	width: 90%;
+	margin: auto;
+}
+
+.story .avatar {
+	width: 40px;
+	height:40px;
+	border:1px solid #666;
+	border-radius: 20px;
+	float:left;
+	margin-right: 16px;
+}
