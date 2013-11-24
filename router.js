@@ -9,12 +9,11 @@ if (Meteor.isClient) {
 		},
 
 		home: function() {
-			debugger;
 			Session.set('view', 'home');
+			Session.set('page_num',1);
 		},
 
 		product: function(product_id) {
-			debugger;
 			Session.set('view', 'product');
 			Session.set('product_id', product_id);
 		}

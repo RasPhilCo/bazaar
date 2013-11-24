@@ -33,6 +33,11 @@ a {
 	display: inline-block;
 }
 
+.photo_link img {
+	width:100%;
+	height:auto;
+}
+
 .product_info h1 {
 	line-height:10px;
 	font-size: 17px;
@@ -69,4 +74,9 @@ a {
 	border-radius: 20px;
 	float:left;
 	margin-right: 16px;
+	background-size: cover;
+}
+
+.story .name {
+	color:rgb(160, 217, 174);
 }

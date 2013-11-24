@@ -8,7 +8,7 @@
 	<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <a class="brand" href="#">Bazaar</a>
+        <a class="brand" href="/">Bazaar</a>
         <div class="nav-collapse collapse">
           <p class="navbar-text pull-right">
            <!-- Logged in as <a href="#" class="navbar-link">Username</a> -->
@@ -72,11 +72,15 @@
 		</div>
 		<div class="span5">
 			<div class="product_info">
-				<a href="#" class="photo_link"><img src="{{this.imageUrl}}"></a>
+				<a href="/product/{{this._id}}/" class="photo_link"><img src="{{this.imageUrl}}"></a>
 				<div class="details">
-					<h1><a href="#">{{this.name}}</a></h1>
-					<p>{{this.description}}</p>
+					<h1><a href="/product/{{this._id}}/">{{this.name}}</a></h1>
 					<span class="price">${{this.price}}</price>
+					{{#unless leftStory}}
+						{{#unless rightStory}}
+							<div class="avatar" style="background-image:url('{{this.creator.creator_url}}');"></div>
+						{{/unless}}
+					{{/unless}}
 				</div>		
 			</div>
 		</div>		
@@ -94,72 +98,34 @@
 	<div class="row product full">
 		<div class="span8">
 			<div class="product_details">
-				<div class="photo">
+				<div class="photo" style="background-image:url('{{this.imageUrl}}');">
 				</div>
-				<div class="product_name">Chicken Pot Pie</div>
-				<div class="artist">by Artist with Group</div>
+				<div class="product_name">{{this.name}}</div>
+				<div class="artist">by {{this.creator.name}} in {{this.creator.location}}</div>
 				<div class="description">
-					<p>My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand? </p>
-
-					<p>Normally, both your asses would be dead as fucking fried chicken, but you happen to pull this shit while I'm in a transitional period so I don't wanna kill you, I wanna help you. But I can't give you this case, it don't belong to me. Besides, I've already been through too much shit this morning over this case to hand it over to your dumb ass. </p>
-
-					<p>My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand? </p>
+					{{this.description}}
 				</div>
 			</div>
 		</div>
 		<div class="span3">
 			<div class="product_summary">
-				<div class="price">$199 <span class="currency">USD</span></div>
+				<div class="price">${{this.price}} <span class="currency">USD</span></div>
 				<div class="description_header">Description</div>
 				<p class="description">This is a short little bit about this product. It's not super long or anything.</p>
-				<div class="buy button">Buy</div>
+				<a class="buy button" href="{{this.link}}">Buy</a>
 			</div>
-			<div class="artist_image"></div>
-			<div class="artist_name">Catwoman</div>
+			<div class="artist_image"><img src="{{this.creator.creator_url}}"></div>
+			<div class="artist_name">{{this.creator.name}}</div>
 			<div class="artist_story">
-				<p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb. </p>
-
-				<p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb. </p>
+				{{this.creator.short_story}}
 			</div>
 		</div>
 	</div>
 </template>
 
 <template name="story">
-	<div class="avatar">
+	<div class="avatar" style="background-image:url('{{this.creator.creator_url}}');">
 	</div>
-	<a class="name">{{this.creator.name}}</a>
+	<span class="name">{{this.creator.name}}</span>
 	<p>{{this.creator.short_story}}</p>
 </template>
-
-<!--<script type='text/javascript'>//<![CDATA[ 
-
-function Main($scope) {
-    $scope.items = [];
-    
-    var counter = 1;
-    $scope.loadMore = function() {
-        for (var i = 1; i < 5; i++) {
-            $scope.items.push({id: counter});
-            counter += 1;
-        }
-    };
-    
-    $scope.loadMore();
-}
-
-angular.module('scroll', []).directive('whenScrolled', function() {
-    return function(scope, elm, attr) {
-        var raw = elm[0];
-        
-        elm.bind('scroll', function() {
-            if (raw.scrollTop + raw.offsetHeight >= raw.scrollHeight) {
-                scope.$apply(attr.whenScrolled);
-            }
-        });
-    };
-});
-
-//]]>  
-
-</script>-->
