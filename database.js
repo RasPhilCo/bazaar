@@ -116,23 +116,13 @@ if (Meteor.isServer) {
     }, 
 
 ];
-
-    //Products.remove({});
-    var lastIndex = -1, lastLastIndex = -1;
+    Products.remove({});
     for (var i = Products.find().count(); i <= 100; i++) {
-      var index = _.random(0,data.length-1);
-      if (index == lastIndex || index == lastLastIndex) {
-        index++;
-         if (index == lastIndex || index == lastLastIndex) {
-          index++;
-        }
-      }
-      index = index % data.length;
 
-      Products.insert(data[index]);
-
-      lastLastIndex = lastIndex;
-      lastIndex = index;
+      var index = i % data.length;
+      Products.insert(_.extend(data[index], {
+        index:i,
+      }));
 
     };
   });

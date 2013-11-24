@@ -8,8 +8,19 @@
 }
 
 body {
+
 	font-family: Domine, serif;
-	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+	padding-top: 0; /* 60px to make the container go all the way to the bottom of the topbar */
+	border-top: 5px solid rgb(143, 29, 1);
+}
+
+.logo {
+	text-align: center;
+}
+.logo img {
+
+	text-align: center;
+	height:220px;
 }
 
 a {
@@ -22,7 +33,7 @@ a {
 }
 
 .navbar-inner {
-	background-color: rgb(143, 29, 1)!important;
+	background-color: !important;
 	background-image: none!important;
 }
 

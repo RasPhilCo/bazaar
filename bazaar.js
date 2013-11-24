@@ -12,6 +12,9 @@ if (Meteor.isServer) {
     } else {
       return Products.find({}, {
         limit:10 + (page-1)*6,
+        sort:{
+          index:1,
+        }
       });
     }
   });
@@ -81,6 +84,12 @@ if (Meteor.isClient) {
   Template.stream.destroyed = function() {
     $(document).off('scroll');
   }
+
+  Products.allow({
+    remove: function() {
+      return true;
+    }
+  })
 
 
   Template.product.helpers({
