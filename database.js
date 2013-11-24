@@ -130,7 +130,7 @@ if (Meteor.isServer) {
     }, 
 
 ];
-    Products.remove({});
+    //Products.remove({});
     for (var i = Products.find().count(); i <= 100; i++) {
 
       var index = i % data.length;

@@ -85,12 +85,6 @@ if (Meteor.isClient) {
     $(document).off('scroll');
   }
 
-  Products.allow({
-    remove: function() {
-      return true;
-    }
-  })
-
 
   Template.product.helpers({
     leftStory: function() {
