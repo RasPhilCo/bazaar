@@ -4,13 +4,15 @@ if (Meteor.isClient) {
 	var myRouter = Backbone.Router.extend({
 		routes: {
 			"product/:pid/":"product",
+			'page/:num/':'home',
 			'/':'home',
 			'':'home'
 		},
 
-		home: function() {
+		home: function(page_num) {
+			Session.set('product_id', null)
 			Session.set('view', 'home');
-			Session.set('page_num',1);
+			Session.set('page_num', page_num ? page_num : 1);
 		},
 
 		product: function(product_id) {

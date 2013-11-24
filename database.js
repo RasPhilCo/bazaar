@@ -17,20 +17,6 @@ if (Meteor.isServer) {
         }
     }, 
     { 
-        "id": "RG-011", 
-        "imageUrl": "http://www.rebuildglobally.org/wp-content/uploads/2012/03/IMG_1718-1751788916-O1.jpg", 
-        "name": "John Robert Sandal", 
-        "description": "\"Rebuilder\" leather and tire sandals",
-        "link": "http://www.rebuildglobally.org/products-page/john-robert/cassandra-sandals/#sthash.GUy0w-GOm.dpuf",
-        price:50,
-        "creator": {
-          "name":"John Robert",
-          "location":"Haiti",
-          "short_story": "This design is named after our artisan, John Robert. Our mission is to create healthier environments for people in distressed communities by using new and innovative techniques that promote recycling, eco-friendly development, gainful employment, agriculture and education.",
-          "creator_url": "http://www.rebuildglobally.org/wp-content/uploads/2012/05/James-and-Adremen-e1363392998461.jpg"        
-        }
-    },
-    { 
         "id": "MC-011", 
         "imageUrl": "http://cdn.shopify.com/s/files/1/0108/0522/products/greentanscarf_grande.jpg?v=1352924284", 
         "name": "Multi-tone Scarf", 
@@ -131,7 +117,7 @@ if (Meteor.isServer) {
 
 ];
 
-    Products.remove({});
+    //Products.remove({});
     var lastIndex = -1, lastLastIndex = -1;
     for (var i = Products.find().count(); i <= 100; i++) {
       var index = _.random(0,data.length-1);

@@ -8,12 +8,17 @@
 }
 
 body {
-	font-family: Pigeon, serif;
+	font-family: Domine, serif;
 	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
 
 a {
 	color:rgb(160, 217, 174);
+}
+
+.navbar-inner .brand img {
+	height:30px;
+	width:auto;
 }
 
 .navbar-inner {
