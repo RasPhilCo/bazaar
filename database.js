@@ -2,6 +2,20 @@ if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
     var data = [
+      { 
+        "id": "", 
+        "imageUrl": "http://cdn.shopify.com/s/files/1/0108/0522/products/DSC_0275_large.jpg?v=1347158965", 
+        "name": "Fabric Pouch", 
+        "description": "Each pouchlette is unique in color and print. Perfect for loose change, small cosmetics, or small tech devices. Let us choose the pattern for you. Approximately 7\" x 4\". Market Colors products are beautiful because they are handmade and unique. When you receive your item, please enjoy any distinctions that differ from that seen online. Inside your pouchlette you will find a product card with information about the craftsmen from Lilongwe, Malawi who made your item.",
+        "link": "http://store.marketcolors.org/collections/frontpage/products/navy-gold-circuit-clutch",
+        price:5, 
+        "creator": { 
+          "name":"Wezzie", 
+          "location":"Malawi", 
+          "short_story": "Wezzie, from Lilongwe, Malawi, is one of the craftsmen who make these pouchlettes. With your bag, you will also receive a product card with additional information about how the craftsman's life is impacted when you purchase their products.",
+          "creator_url": "http://cdn.shopify.com/s/files/1/0108/0522/files/COTNWezzie_medium.jpg?141"
+        } 
+    }, 
        { 
         "id": "C-011", 
         "imageUrl": "http://cdn.shopify.com/s/files/1/0249/2772/products/project001.josephine.013_shop_1024x1024.jpg?v=1377804546", 
